@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 7%;
+  --foreground: 0 0% 96%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 40%;
+  --popover: 0 0% 12%;
+  --popover-foreground: 0 0% 96%;
+  --card: 0 0% 12%;
+  --card-foreground: 0 0% 96%;
+  --border: 0 0% 20%;
+  --input: 0 0% 20%;
+  --primary: 200 15% 25%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 12%;
+  --secondary-foreground: 0 0% 96%;
+  --accent: 200 15% 30%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 200 15% 25%;
+  --radius: 0.5rem;
+  
+  /* Sidebar colors - identical to main theme since no separate sidebar */
+  --sidebar-background: 0 0% 7%;
+  --sidebar-foreground: 0 0% 96%;
+  --sidebar-primary: 200 15% 25%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 200 15% 30%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-border: 0 0% 20%;
+  --sidebar-ring: 200 15% 25%;
+  
+  /* Chart colors */
+  --chart-1: 200 15% 25%;
+  --chart-2: 217 91% 60%;
+  --chart-3: 142 71% 45%;
+  --chart-4: 341 90% 61%;
+  --chart-5: 262 83% 58%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-['Open_Sans',sans-serif];
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-['Montserrat',sans-serif] font-semibold;
+  }
+}
+
+@layer components {
+  .video-card:hover .video-overlay {
+    @apply opacity-100;
+  }
+  
+  .video-card:hover img {
+    @apply scale-105;
+  }
+  
+  .navbar-fixed {
+    @apply transition-all duration-300;
+  }
+  
+  .page-section {
+    @apply transition-opacity duration-500;
+  }
+  
+  /* Custom styling for video elements */
+  .shadow-glow {
+    box-shadow: 0 0 15px rgba(55, 65, 81, 0.5), 0 0 30px rgba(55, 65, 81, 0.3);
+  }
+  
+  .aspect-w-4 {
+    position: relative;
+    padding-bottom: calc(3 / 4 * 100%);
+  }
+  
+  .aspect-h-3 > * {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  /* YouTube player custom styles */
+  .react-player iframe {
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+}
